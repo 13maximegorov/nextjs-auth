@@ -10,7 +10,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
     },
   });
 
-  const confirmLink = `${process.env.NEXT_PIBLIC_SITE_URL}/auth/new-verification?token=${token}`;
+  const confirmLink = `${process.env.NEXT_PUBLIC_SITE_URL}/auth/new-verification?token=${token}`;
 
   return await transporter.sendMail({
     from: `NextJS Auth <${process.env.SMTP_FROM_EMAIL}>`,
