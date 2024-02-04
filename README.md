@@ -2,7 +2,7 @@
 
 Advanced authentication in NextJS application.
 
-## Key Features
+## Key features
 
 - 🔐 Next-auth v5 (Auth.js)
 - 🚀 Next.js 14 with server actions
