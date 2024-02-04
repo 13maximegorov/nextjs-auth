@@ -7,7 +7,7 @@ Advanced authentication in NextJS application.
 - 🔐 Next-auth v5 (Auth.js)
 - 🚀 Next.js 14 with server actions
 - 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with Google & GitHub)
+- 🌐 OAuth Provider (Yandex)
 - 🔒 Forgot password functionality
 - ✉️ Email verification
 - 📱 Two factor verification
