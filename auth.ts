@@ -4,6 +4,7 @@ import db from '@/lib/db';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import NextAuth, { type Session } from 'next-auth';
 import type { JWT } from 'next-auth/jwt';
+import { getTwoFactorConfirmationByUserId } from './data/two-factor-confirmation';
 
 export const {
   handlers: { GET, POST },
@@ -34,6 +35,20 @@ export const {
       const existingUser = await getUserById(user.id as string);
 
       if (!existingUser?.emailVerified) return false;
+
+      if (existingUser.isTwoFactorEnabled) {
+        const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
+          existingUser.id,
+        );
+
+        if (!twoFactorConfirmation) return false;
+
+        await db.twoFactorConfirmation.delete({
+          where: {
+            id: twoFactorConfirmation.id,
+          },
+        });
+      }
 
       return true;
     },

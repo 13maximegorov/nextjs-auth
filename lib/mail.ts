@@ -9,6 +9,17 @@ const options = {
   },
 };
 
+export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
+  const transporter = nodemailer.createTransport(options);
+
+  return await transporter.sendMail({
+    from: `NextJS Auth <${process.env.SMTP_FROM_EMAIL}>`,
+    to: email,
+    subject: '2FA Code',
+    html: `<p>Your 2FA code: ${token}</p>`,
+  });
+};
+
 export const sendPasswordResetEmail = async (email: string, token: string) => {
   const transporter = nodemailer.createTransport(options);
 
