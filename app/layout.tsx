@@ -1,6 +1,9 @@
+import { auth } from '@/auth';
+import { Toaster } from '@/components/ui/sonner';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
+import { SessionProvider } from 'next-auth/react';
 import { Inter } from 'next/font/google';
 
 const fontSans = Inter({
@@ -13,25 +16,30 @@ export const metadata: Metadata = {
   description: 'Advanced authentication in NextJS application',
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
+  const session = await auth();
+
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-    >
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans',
-          fontSans.variable,
-        )}
+    <SessionProvider session={session}>
+      <html
+        lang="en"
+        suppressHydrationWarning
       >
-        {children}
-      </body>
-    </html>
+        <body
+          className={cn(
+            'min-h-screen bg-background font-sans',
+            fontSans.variable,
+          )}
+        >
+          <Toaster />
+          {children}
+        </body>
+      </html>
+    </SessionProvider>
   );
 };
 
