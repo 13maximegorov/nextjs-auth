@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useCurrentUser } from '@/hooks/use-current-user';
+import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { ExitIcon } from '@radix-ui/react-icons';
 import { FaUser } from 'react-icons/fa';
 

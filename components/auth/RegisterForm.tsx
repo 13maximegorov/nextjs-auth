@@ -1,9 +1,9 @@
 'use client';
 
 import { register } from '@/actions/register';
+import { FormError } from '@/components/FormError';
+import { FormSuccess } from '@/components/FormSuccess';
 import { CardWrapper } from '@/components/auth/CardWrapper';
-import { FormError } from '@/components/form-error';
-import { FormSuccess } from '@/components/form-success';
 import { Button } from '@/components/ui/button';
 import {
   Form,

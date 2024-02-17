@@ -1,8 +1,8 @@
 'use client';
 
 import { settings } from '@/actions/settings';
-import { FormError } from '@/components/form-error';
-import { FormSuccess } from '@/components/form-success';
+import { FormError } from '@/components/FormError';
+import { FormSuccess } from '@/components/FormSuccess';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import {
@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
-import { useCurrentUser } from '@/hooks/use-current-user';
+import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { SettingsSchema } from '@/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { UserRole } from '@prisma/client';

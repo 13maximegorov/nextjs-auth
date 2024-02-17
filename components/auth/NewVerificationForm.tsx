@@ -1,9 +1,9 @@
 'use client';
 
 import { newVerification } from '@/actions/new-verification';
+import { FormError } from '@/components/FormError';
+import { FormSuccess } from '@/components/FormSuccess';
 import { CardWrapper } from '@/components/auth/CardWrapper';
-import { FormError } from '@/components/form-error';
-import { FormSuccess } from '@/components/form-success';
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
